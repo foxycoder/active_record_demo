@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
   def new
     @movie = Movie.new
     @movie.build_director
+    @movie.roles.build
   end
 
   def create
@@ -18,6 +19,7 @@ class MoviesController < ApplicationController
 
   def edit
     @movie = Movie.find(params[:id])
+    @movie.roles.build
   end
 
   def update
@@ -41,6 +43,9 @@ class MoviesController < ApplicationController
       :title, :plot, :picture, :release_date, :duration,
       director_attributes: [
         :first_name, :last_name, :country
+      ],
+      roles_attributes: [
+        :id, :name, :actor_id, :_destroy
       ]
     )
   end

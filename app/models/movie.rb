@@ -5,4 +5,5 @@ class Movie < ActiveRecord::Base
   has_many :actors, through: :roles
 
   accepts_nested_attributes_for :director
+  accepts_nested_attributes_for :roles, allow_destroy: true, reject_if: lambda { |role| role[:name].blank? }
 end

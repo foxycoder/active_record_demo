@@ -39,6 +39,26 @@
     <% end %>
   </div>
 
+  <div class="well">
+    <h3>Roles</h3>
+    <%= f.fields_for(:roles) do |r| %>
+      <div class="form-group">
+        <%= r.label :name %>
+        <%= r.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= r.label :actor %>
+        <%= r.select :actor_id, Actor.all.map{|a| [a.name, a.id]}, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= r.label :destroy %>
+        <%= r.check_box :_destroy, class: 'form-control' %>
+      </div>
+    <% end %>
+  </div>
+
   <div class="form-group">
     <%= f.submit "Save Movie", class: 'btn btn-lg btn-success' %>
   </div>

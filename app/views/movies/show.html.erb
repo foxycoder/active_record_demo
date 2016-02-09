@@ -14,19 +14,6 @@
   </article>
 
   <aside class="col-sm-2">
-    <div class="director">
-      <center>
-        <em>Directed by:</em>
-      </center>
-      <h3>
-        <%= @movie.director.first_name %>
-        <%= @movie.director.last_name %>
-      </h3>
-
-      <p>
-        <strong>Country:</strong>
-        <%= @movie.director.country %>
-      </p>
-    </div>
+    <%= render @movie.director %>
   </aside>
 </div>
