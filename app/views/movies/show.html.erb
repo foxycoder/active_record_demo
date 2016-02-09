@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="page-header">
+    <h1><%= @movie.title %></h1>
+  </div>
+
+  <aside class="col-sm-2">
+    <div class="poster">
+      <%= image_tag @movie.picture, class: "img-responsive" %>
+    </div>
+  </aside>
+
+  <article class="movie col-sm-8">
+    <p><%= @movie.plot %></p>
+  </article>
+
+  <aside class="col-sm-2">
+    <div class="director">
+      <center>
+        <em>Directed by:</em>
+      </center>
+      <h3>
+        <%= @movie.director.first_name %>
+        <%= @movie.director.last_name %>
+      </h3>
+
+      <p>
+        <strong>Country:</strong>
+        <%= @movie.director.country %>
+      </p>
+    </div>
+  </aside>
+</div>
