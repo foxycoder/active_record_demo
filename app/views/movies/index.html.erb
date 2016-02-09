@@ -1,0 +1,18 @@
+<h1>Movies Database</h1>
+
+<div class="row movies">
+  <% @movies.each do |movie| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag movie.picture %>
+        <div class="caption">
+          <h3><%= movie.title %></h3>
+          <p><%= movie.plot %></p>
+          <p>
+            <%= link_to "Read more", movie, class: "btn btn-primary", role: "button" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
